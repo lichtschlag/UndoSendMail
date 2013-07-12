@@ -68,12 +68,11 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 	NSWindow *currentWindow = [selfPointer performSelector:@selector(window) withObject:nil];
 	NSView *backingView = [currentWindow contentView];
 	NSToolbar *windowToolbar = [currentWindow toolbar];
-	//	NSLog(@"%s toolbar items = %@", __PRETTY_FUNCTION__, [windowToolbar items]);
-	//	NSLog(@"%s sender is : %@", __PRETTY_FUNCTION__, sender);
 	
 	// find the toolbar send: item
 	NSToolbarItemGroup *sendItemGroup = [[windowToolbar items] firstObject];
-	//	TODO: make sure we work with differernt icon orders or no send toolbar item at all
+
+	//	TODO: make sure we work with different icon orders or no send toolbar item at all
 	
 	NSToolbarItem *sendItem = [[sendItemGroup subitems] firstObject];
 	
@@ -81,9 +80,9 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 	{
 		// view
 		NSView *overlayView = [[USMShieldView alloc] initWithFrame:backingView.bounds];
-		overlayView.wantsLayer = YES;
-		overlayView.layer.backgroundColor = CGColorCreateGenericGray(0.5, 0.5);
-		[overlayView setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable ];
+//		overlayView.wantsLayer = YES;
+//		overlayView.layer.backgroundColor = CGColorCreateGenericGray(0.5, 0.5);
+//		[overlayView setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable ];
 		[backingView addSubview:overlayView];
 		[currentWindow makeFirstResponder:overlayView];
 		ourData[kOverlayViewKey] = overlayView;
@@ -163,7 +162,6 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 		// step 3: install the timerFired: message on the MailDocumentEditor
 		class_addMethod(MDEClass, @selector(timerFired:), (IMP) timerFired, "v@:@");
 	}
-	NSLog(@"UndoSendMail is operational");
 }
 
 
