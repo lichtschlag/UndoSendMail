@@ -7,19 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F5358F3178ECF45009B3938 /* NSApplication+UndoSendMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5358F2178ECF45009B3938 /* NSApplication+UndoSendMail.m */; };
+		3F5358F6178ED0EF009B3938 /* USMHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5358F5178ED0EF009B3938 /* USMHelpers.m */; };
 		3F83B4F0178C7A3A00006D85 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F83B4EF178C7A3A00006D85 /* Cocoa.framework */; };
 		3F83B4FA178C7A3A00006D85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F83B4F8178C7A3A00006D85 /* InfoPlist.strings */; };
+		3F83B507178C80A900006D85 /* UndoSendMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F83B506178C80A900006D85 /* UndoSendMail.m */; };
+		3F83B50B178C8F9A00006D85 /* USMMailDocumentEditorTweaks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F83B509178C88CE00006D85 /* USMMailDocumentEditorTweaks.m */; };
+		3FBC1238178D9E32001B8A70 /* USMShieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC1237178D9E2F001B8A70 /* USMShieldView.m */; };
+		3FBC123A178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3FBC1239178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf */; };
+		3FF53CE4178FFFA30034A7ED /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 3FF53CE3178FFFA30034A7ED /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F83B4EC178C7A3A00006D85 /* UndoSendMail.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UndoSendMail.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F5358F1178ECF45009B3938 /* NSApplication+UndoSendMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+UndoSendMail.h"; sourceTree = "<group>"; };
+		3F5358F2178ECF45009B3938 /* NSApplication+UndoSendMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+UndoSendMail.m"; sourceTree = "<group>"; };
+		3F5358F4178ED0EF009B3938 /* USMHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USMHelpers.h; sourceTree = "<group>"; };
+		3F5358F5178ED0EF009B3938 /* USMHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USMHelpers.m; sourceTree = "<group>"; };
+		3F83B4EC178C7A3A00006D85 /* UndoSendMail.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UndoSendMail.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F83B4EF178C7A3A00006D85 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3F83B4F2178C7A3A00006D85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3F83B4F3178C7A3A00006D85 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3F83B4F4178C7A3A00006D85 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		3F83B4F7178C7A3A00006D85 /* UndoSendMail-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UndoSendMail-Info.plist"; sourceTree = "<group>"; };
 		3F83B4F9178C7A3A00006D85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3F83B4FB178C7A3A00006D85 /* UndoSendMail-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UndoSendMail-Prefix.pch"; sourceTree = "<group>"; };
+		3F83B505178C80A900006D85 /* UndoSendMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoSendMail.h; sourceTree = "<group>"; };
+		3F83B506178C80A900006D85 /* UndoSendMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoSendMail.m; sourceTree = "<group>"; };
+		3F83B508178C88CE00006D85 /* USMMailDocumentEditorTweaks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USMMailDocumentEditorTweaks.h; sourceTree = "<group>"; };
+		3F83B509178C88CE00006D85 /* USMMailDocumentEditorTweaks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USMMailDocumentEditorTweaks.m; sourceTree = "<group>"; };
+		3FBC1236178D9E2F001B8A70 /* USMShieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMShieldView.h; sourceTree = "<group>"; };
+		3FBC1237178D9E2F001B8A70 /* USMShieldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMShieldView.m; sourceTree = "<group>"; };
+		3FBC1239178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TB_UndoSend_Fullscreen.pdf; sourceTree = "<group>"; };
+		3FF53CE3178FFFA30034A7ED /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,10 +52,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F5358F7178ED115009B3938 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3F5358F1178ECF45009B3938 /* NSApplication+UndoSendMail.h */,
+				3F5358F2178ECF45009B3938 /* NSApplication+UndoSendMail.m */,
+				3F5358F4178ED0EF009B3938 /* USMHelpers.h */,
+				3F5358F5178ED0EF009B3938 /* USMHelpers.m */,
+			);
+			name = Helpers;
+			path = UndoSendMail;
+			sourceTree = "<group>";
+		};
 		3F83B4E3178C7A3A00006D85 = {
 			isa = PBXGroup;
 			children = (
-				3F83B4F5178C7A3A00006D85 /* UndoSendMail */,
+				3FF53CE3178FFFA30034A7ED /* readme.md */,
+				3F5358F7178ED115009B3938 /* Helpers */,
+				3F83B4F5178C7A3A00006D85 /* Plug-In Core */,
+				3F83B4F6178C7A3A00006D85 /* Supporting Files */,
 				3F83B4EE178C7A3A00006D85 /* Frameworks */,
 				3F83B4ED178C7A3A00006D85 /* Products */,
 			);
@@ -46,7 +79,7 @@
 		3F83B4ED178C7A3A00006D85 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F83B4EC178C7A3A00006D85 /* UndoSendMail.bundle */,
+				3F83B4EC178C7A3A00006D85 /* UndoSendMail.mailbundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,38 +87,37 @@
 		3F83B4EE178C7A3A00006D85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F83B4F2178C7A3A00006D85 /* Foundation.framework */,
+				3F83B4F4178C7A3A00006D85 /* AppKit.framework */,
 				3F83B4EF178C7A3A00006D85 /* Cocoa.framework */,
-				3F83B4F1178C7A3A00006D85 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3F83B4F1178C7A3A00006D85 /* Other Frameworks */ = {
+		3F83B4F5178C7A3A00006D85 /* Plug-In Core */ = {
 			isa = PBXGroup;
 			children = (
-				3F83B4F2178C7A3A00006D85 /* Foundation.framework */,
-				3F83B4F3178C7A3A00006D85 /* CoreData.framework */,
-				3F83B4F4178C7A3A00006D85 /* AppKit.framework */,
+				3F83B505178C80A900006D85 /* UndoSendMail.h */,
+				3F83B506178C80A900006D85 /* UndoSendMail.m */,
+				3F83B508178C88CE00006D85 /* USMMailDocumentEditorTweaks.h */,
+				3F83B509178C88CE00006D85 /* USMMailDocumentEditorTweaks.m */,
+				3FBC1236178D9E2F001B8A70 /* USMShieldView.h */,
+				3FBC1237178D9E2F001B8A70 /* USMShieldView.m */,
 			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		3F83B4F5178C7A3A00006D85 /* UndoSendMail */ = {
-			isa = PBXGroup;
-			children = (
-				3F83B4F6178C7A3A00006D85 /* Supporting Files */,
-			);
+			name = "Plug-In Core";
 			path = UndoSendMail;
 			sourceTree = "<group>";
 		};
 		3F83B4F6178C7A3A00006D85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3FBC1239178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf */,
 				3F83B4F7178C7A3A00006D85 /* UndoSendMail-Info.plist */,
 				3F83B4F8178C7A3A00006D85 /* InfoPlist.strings */,
 				3F83B4FB178C7A3A00006D85 /* UndoSendMail-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = UndoSendMail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,7 +137,7 @@
 			);
 			name = UndoSendMail;
 			productName = UndoSendMail;
-			productReference = 3F83B4EC178C7A3A00006D85 /* UndoSendMail.bundle */;
+			productReference = 3F83B4EC178C7A3A00006D85 /* UndoSendMail.mailbundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -139,6 +171,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FBC123A178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf in Resources */,
+				3FF53CE4178FFFA30034A7ED /* readme.md in Resources */,
 				3F83B4FA178C7A3A00006D85 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5358F6178ED0EF009B3938 /* USMHelpers.m in Sources */,
+				3F83B507178C80A900006D85 /* UndoSendMail.m in Sources */,
+				3F83B50B178C8F9A00006D85 /* USMMailDocumentEditorTweaks.m in Sources */,
+				3F5358F3178ECF45009B3938 /* NSApplication+UndoSendMail.m in Sources */,
+				3FBC1238178D9E32001B8A70 /* USMShieldView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +285,7 @@
 				INFOPLIST_FILE = "UndoSendMail/UndoSendMail-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = mailbundle;
 			};
 			name = Debug;
 		};
@@ -259,7 +298,7 @@
 				INFOPLIST_FILE = "UndoSendMail/UndoSendMail-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = mailbundle;
 			};
 			name = Release;
 		};
@@ -282,6 +321,7 @@
 				3F83B500178C7A3A00006D85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
