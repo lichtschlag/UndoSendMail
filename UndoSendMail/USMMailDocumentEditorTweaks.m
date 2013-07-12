@@ -88,9 +88,10 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 		ourData[kOverlayViewKey] = overlayView;
 		
 		// button state
-		NSURL *imageURL = [[NSBundle bundleForClass:[USMShieldView class]] URLForImageResource:@"TB_UndoSend_Fullscreen"];
-		NSImage *buttonImage = [[NSImage alloc] initByReferencingURL:imageURL];
-		[buttonImage setName:@"TB_UndoSend_Fullscreen"];
+//		NSURL *imageURL = [[NSBundle bundleForClass:[USMShieldView class]] URLForImageResource:@"TB_Send_Fullscreen copy"];
+//		NSImage *buttonImage = [[NSImage alloc] initByReferencingURL:imageURL];
+		NSImage *buttonImage = [NSImage imageNamed:@"NSStopProgressTemplate"];
+//		[buttonImage setName:@"TB_UndoSend_Fullscreen"];
 		
 		[sendItem setToolTip:@"Undo Send"];
 		[sendItem setLabel:@"Undo Send"];

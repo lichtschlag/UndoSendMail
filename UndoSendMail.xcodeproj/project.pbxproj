@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2351BA17904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3F2351B917904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf */; };
 		3F5358F3178ECF45009B3938 /* NSApplication+UndoSendMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5358F2178ECF45009B3938 /* NSApplication+UndoSendMail.m */; };
 		3F5358F6178ED0EF009B3938 /* USMHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5358F5178ED0EF009B3938 /* USMHelpers.m */; };
 		3F83B4F0178C7A3A00006D85 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F83B4EF178C7A3A00006D85 /* Cocoa.framework */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F2351B917904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TB_Send_Fullscreen copy.pdf"; sourceTree = "<group>"; };
 		3F5358F1178ECF45009B3938 /* NSApplication+UndoSendMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+UndoSendMail.h"; sourceTree = "<group>"; };
 		3F5358F2178ECF45009B3938 /* NSApplication+UndoSendMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+UndoSendMail.m"; sourceTree = "<group>"; };
 		3F5358F4178ED0EF009B3938 /* USMHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USMHelpers.h; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		3F83B4F6178C7A3A00006D85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F2351B917904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf */,
 				3FBC1239178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf */,
 				3F83B4F7178C7A3A00006D85 /* UndoSendMail-Info.plist */,
 				3F83B4F8178C7A3A00006D85 /* InfoPlist.strings */,
@@ -174,6 +177,7 @@
 				3FBC123A178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf in Resources */,
 				3FF53CE4178FFFA30034A7ED /* readme.md in Resources */,
 				3F83B4FA178C7A3A00006D85 /* InfoPlist.strings in Resources */,
+				3F2351BA17904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
