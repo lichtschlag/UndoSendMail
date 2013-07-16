@@ -26,8 +26,8 @@
 {
 	[super initialize];
     
-	Class SingleMessageViewerClass = NSClassFromString(@"MailDocumentEditor");
-	if (USMAssert((BOOL)SingleMessageViewerClass, @"Unable to find MailDocumentEditor class"))
+	Class SingleMessageViewerClass = NSClassFromString(@"DocumentEditor");
+	if (USMAssert((BOOL)SingleMessageViewerClass, @"Unable to find DocumentEditor class"))
 	{
 		// TODO: what does this do?
 //		[UndoSendMail registerBundle];
