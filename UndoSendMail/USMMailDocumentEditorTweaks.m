@@ -145,7 +145,9 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 + (void) installSendListener
 {
 	Class MDEClass = NSClassFromString(@"MailDocumentEditor");
-	if (USMAssert((BOOL)MDEClass, @"Could not hook UndoSendMail: MailDocumentEditor class missing"))
+	if (!MDEClass)
+		MDEClass = NSClassFromString(@"DocumentEditor");
+	if (USMAssert((BOOL)MDEClass, @"Could not hook UndoSendMail: DocumentEditor class missing"))
 	{
 		// step 1 install ourSend: message on the MailDocumentEditor
 		class_addMethod(MDEClass, @selector(sendHookedByUndoSendMail:), (IMP) sendHookedByUndoSendMail, "v@:@");

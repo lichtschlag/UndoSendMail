@@ -26,8 +26,10 @@
 {
 	[super initialize];
     
-	Class SingleMessageViewerClass = NSClassFromString(@"MailDocumentEditor");
-	if (USMAssert((BOOL)SingleMessageViewerClass, @"Unable to find MailDocumentEditor class"))
+	Class DocumentEditorClass = NSClassFromString(@"MailDocumentEditor");
+	if (DocumentEditorClass)
+		DocumentEditorClass = NSClassFromString(@"DocumentEditor");
+	if (USMAssert((BOOL)DocumentEditorClass, @"Unable to find a DocumentEditor class"))
 	{
 		// TODO: what does this do?
 //		[UndoSendMail registerBundle];
@@ -39,11 +41,11 @@
 		NSLog(@"Fail to load UndoSendMail, plug-in remains inactive until next Mail.app launch");
 	
 	// for DEBUG
-	double delayInSeconds = 1.0;
-	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-		[UndoSendMail installFScript];
-	});
+//	double delayInSeconds = 1.0;
+//	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+//	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//		[UndoSendMail installFScript];
+//	});
 }
 
 
