@@ -27,7 +27,7 @@
 	[super initialize];
     
 	Class DocumentEditorClass = NSClassFromString(@"MailDocumentEditor");
-	if (DocumentEditorClass)
+	if (!DocumentEditorClass)
 		DocumentEditorClass = NSClassFromString(@"DocumentEditor");
 	if (USMAssert((BOOL)DocumentEditorClass, @"Unable to find a DocumentEditor class"))
 	{

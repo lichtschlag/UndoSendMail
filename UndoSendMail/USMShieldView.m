@@ -19,7 +19,7 @@
     if (self)
 	{
 		self.wantsLayer = YES;
-		self.layer.backgroundColor = CGColorCreateGenericGray(0.5, 0.5);
+		self.layer.backgroundColor = CGColorCreateGenericGray(0.4, 0.3);
 		[self setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
     }
     return self;
