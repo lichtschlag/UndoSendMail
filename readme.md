@@ -2,7 +2,7 @@
 
 Here's a little plugin to Mail.app which I wrote because I missed Gmail's functionality to delay the sending of Emails for a short time.
 This plug-in will do exactly that.
-So: write a mail, hit send, and you'll have some time to review your text before it is send for good. 
+So: write a mail, hit send, and you'll have some time to review your text before it is sent for good. 
 Hit send (Command-Shift-D) again to abort the sending and edit it once more.
 
 This software is not finished, not supported by Apple or me, has not a particularly well designed user experience, and does contain bugs.
