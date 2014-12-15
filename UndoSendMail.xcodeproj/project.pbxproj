@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F2351BA17904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3F2351B917904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf */; };
+		3F51EF5617E7355600810A64 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F51EF5517E7355600810A64 /* QuartzCore.framework */; };
 		3F5358F3178ECF45009B3938 /* NSApplication+UndoSendMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5358F2178ECF45009B3938 /* NSApplication+UndoSendMail.m */; };
 		3F5358F6178ED0EF009B3938 /* USMHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5358F5178ED0EF009B3938 /* USMHelpers.m */; };
 		3F83B4F0178C7A3A00006D85 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F83B4EF178C7A3A00006D85 /* Cocoa.framework */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		3F2351B917904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TB_Send_Fullscreen copy.pdf"; sourceTree = "<group>"; };
+		3F51EF5517E7355600810A64 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3F5358F1178ECF45009B3938 /* NSApplication+UndoSendMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+UndoSendMail.h"; sourceTree = "<group>"; };
 		3F5358F2178ECF45009B3938 /* NSApplication+UndoSendMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+UndoSendMail.m"; sourceTree = "<group>"; };
 		3F5358F4178ED0EF009B3938 /* USMHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USMHelpers.h; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F51EF5617E7355600810A64 /* QuartzCore.framework in Frameworks */,
 				3F83B4F0178C7A3A00006D85 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +92,7 @@
 		3F83B4EE178C7A3A00006D85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F51EF5517E7355600810A64 /* QuartzCore.framework */,
 				3F83B4F2178C7A3A00006D85 /* Foundation.framework */,
 				3F83B4F4178C7A3A00006D85 /* AppKit.framework */,
 				3F83B4EF178C7A3A00006D85 /* Cocoa.framework */,

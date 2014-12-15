@@ -70,11 +70,11 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 	NSToolbar *windowToolbar = [currentWindow toolbar];
 	
 	// find the toolbar send: item
-	NSToolbarItemGroup *sendItemGroup = [[windowToolbar items] firstObject];
+	NSToolbarItemGroup *sendItemGroup = [[windowToolbar items] objectAtIndex:0];
 
 	//	TODO: make sure we work with different icon orders or no send toolbar item at all
 	
-	NSToolbarItem *sendItem = [[sendItemGroup subitems] firstObject];
+	NSToolbarItem *sendItem = [[sendItemGroup subitems] objectAtIndex:0];
 	
 	if (![ourData[kEmailSendCommandIsQueuedKey] boolValue])
 	{
@@ -154,10 +154,11 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 		
 		// step 2 swap the two send: message implementations
 		Method sendMethodFromMail = class_getInstanceMethod(MDEClass, @selector(send:));
-		if (USMAssert((BOOL)sendMethodFromMail, @"Unable to find - (void) send: original method"))
+
+		if (USMAssert((sendMethodFromMail != NULL), @"Unable to find - (void) send: original method"))
 		{
 			Method sendMethodFromUndoSendMail = class_getInstanceMethod(MDEClass, @selector(sendHookedByUndoSendMail:));
-			USMAssert((BOOL)sendMethodFromUndoSendMail, @"Unable to find - (void) send: replacement method");
+			USMAssert((sendMethodFromUndoSendMail != NULL), @"Unable to find - (void) send: replacement method");
 			
 			USMExchangeMethodImplementations(sendMethodFromMail, sendMethodFromUndoSendMail);
 		}
