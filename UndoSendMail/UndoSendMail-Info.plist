@@ -28,6 +28,7 @@
 	<string>UndoSendMail</string>
 	<key>SupportedPluginCompatibilityUUIDs</key>
 	<array>
+		<string>60D52D22-7491-4CA7-95BA-88215BD88F8E</string>
 		<string>F4C26776-22B3-4A0A-96E1-EA8E4482E0B5</string>
 		<string>2183B2CD-BEDF-4AA6-AC18-A1BBED2E3354</string>
 		<string>19B53E95-0964-4AAB-88F9-6D2F8B7B6037</string>
