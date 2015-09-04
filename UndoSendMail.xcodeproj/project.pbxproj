@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F2351BA17904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3F2351B917904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf */; };
 		3F51EF5617E7355600810A64 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F51EF5517E7355600810A64 /* QuartzCore.framework */; };
 		3F5358F3178ECF45009B3938 /* NSApplication+UndoSendMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5358F2178ECF45009B3938 /* NSApplication+UndoSendMail.m */; };
 		3F5358F6178ED0EF009B3938 /* USMHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5358F5178ED0EF009B3938 /* USMHelpers.m */; };
@@ -16,12 +15,10 @@
 		3F83B507178C80A900006D85 /* UndoSendMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F83B506178C80A900006D85 /* UndoSendMail.m */; };
 		3F83B50B178C8F9A00006D85 /* USMMailDocumentEditorTweaks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F83B509178C88CE00006D85 /* USMMailDocumentEditorTweaks.m */; };
 		3FBC1238178D9E32001B8A70 /* USMShieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC1237178D9E2F001B8A70 /* USMShieldView.m */; };
-		3FBC123A178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3FBC1239178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf */; };
 		3FF53CE4178FFFA30034A7ED /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 3FF53CE3178FFFA30034A7ED /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F2351B917904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TB_Send_Fullscreen copy.pdf"; sourceTree = "<group>"; };
 		3F51EF5517E7355600810A64 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3F5358F1178ECF45009B3938 /* NSApplication+UndoSendMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+UndoSendMail.h"; sourceTree = "<group>"; };
 		3F5358F2178ECF45009B3938 /* NSApplication+UndoSendMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+UndoSendMail.m"; sourceTree = "<group>"; };
@@ -40,7 +37,6 @@
 		3F83B509178C88CE00006D85 /* USMMailDocumentEditorTweaks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USMMailDocumentEditorTweaks.m; sourceTree = "<group>"; };
 		3FBC1236178D9E2F001B8A70 /* USMShieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMShieldView.h; sourceTree = "<group>"; };
 		3FBC1237178D9E2F001B8A70 /* USMShieldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMShieldView.m; sourceTree = "<group>"; };
-		3FBC1239178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TB_UndoSend_Fullscreen.pdf; sourceTree = "<group>"; };
 		3FF53CE3178FFFA30034A7ED /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,8 +113,6 @@
 		3F83B4F6178C7A3A00006D85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3F2351B917904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf */,
-				3FBC1239178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf */,
 				3F83B4F7178C7A3A00006D85 /* UndoSendMail-Info.plist */,
 				3F83B4F8178C7A3A00006D85 /* InfoPlist.strings */,
 				3F83B4FB178C7A3A00006D85 /* UndoSendMail-Prefix.pch */,
@@ -178,10 +172,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FBC123A178E1727001B8A70 /* TB_UndoSend_Fullscreen.pdf in Resources */,
 				3FF53CE4178FFFA30034A7ED /* readme.md in Resources */,
 				3F83B4FA178C7A3A00006D85 /* InfoPlist.strings in Resources */,
-				3F2351BA17904B5D00AF7DDC /* TB_Send_Fullscreen copy.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
