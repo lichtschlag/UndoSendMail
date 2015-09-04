@@ -116,7 +116,7 @@
 
 // ---------------------------------------------------------------------------------------------------------------
 #pragma mark -
-#pragma mark Disable destrucive options from elsewhere in the
+#pragma mark Disable destructive options from elsewhere in the app
 // ---------------------------------------------------------------------------------------------------------------
 
 - (BOOL) validateMenuItem:(NSMenuItem *)menuItem

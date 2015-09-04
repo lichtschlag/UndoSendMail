@@ -153,7 +153,7 @@
 		3F83B4E4178C7A3A00006D85 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Leonhard Lichtschlag";
 			};
 			buildConfigurationList = 3F83B4E7178C7A3A00006D85 /* Build configuration list for PBXProject "UndoSendMail" */;
@@ -231,6 +231,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -292,6 +293,7 @@
 				GCC_PREFIX_HEADER = "UndoSendMail/UndoSendMail-Prefix.pch";
 				INFOPLIST_FILE = "UndoSendMail/UndoSendMail-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.rwth.hci.leonhard.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = mailbundle;
 			};
@@ -305,6 +307,7 @@
 				GCC_PREFIX_HEADER = "UndoSendMail/UndoSendMail-Prefix.pch";
 				INFOPLIST_FILE = "UndoSendMail/UndoSendMail-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.rwth.hci.leonhard.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = mailbundle;
 			};

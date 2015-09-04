@@ -44,6 +44,14 @@ void timerFired(id selfPointer, SEL _cmd, NSTimer *theTimer)
 {
 	// remember: ourSend: will be send: after the swizzle
 	[selfPointer performSelector:@selector(sendHookedByUndoSendMail:) withObject:selfPointer];
+	
+	// check if minimized, if so, close the window
+	NSWindow *messageWindow = [selfPointer performSelector:@selector(window) withObject:nil];
+	BOOL isMinimized = [messageWindow isMiniaturized];
+	if (isMinimized)
+	{
+		[messageWindow close];
+	}
 }
 
 
