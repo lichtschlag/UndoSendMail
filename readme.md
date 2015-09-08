@@ -1,6 +1,6 @@
 #UndoSendMail
 
-![UndoSendMail In Action](http://lichtschlag.net/files/UndoSendMailForGithub.gif)
+![UndoSendMail In Action](http://bit.ly/1VLhBHK)
 
 Here's a little plugin to Mail.app which I wrote because I missed Gmail's functionality to delay the sending of Emails for a short time.
 This plug-in will do exactly that.
@@ -21,7 +21,7 @@ That said, I'll be happy to hear about suggestions and pull requests.
 1. Complile with Xcode
 2. Copy product to ~/Library/Mail/Bundles/
 
-*If you do not know what this means, then this plug-in is not for you*
+*If you do not know what this means, then this plug-in is not for you.*
 
 ##Uninstallation:
 1. Delete ~/Library/Mail/Bundles/UndoSendMail.mailbundle
