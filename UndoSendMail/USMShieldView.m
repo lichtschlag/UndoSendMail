@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 // ===============================================================================================================
-@implementation USMShieldView
+@implementation USMShieldView 
 // ===============================================================================================================
 
 - (id) initWithFrame:(NSRect)frame
@@ -113,6 +113,11 @@
 - (void) keyUp:(NSEvent *)theEvent
 {}
 
+- (void) undo:(id)sender
+{}
+- (void) redo:(id)sender
+{}
+
 
 // ---------------------------------------------------------------------------------------------------------------
 #pragma mark -
@@ -121,14 +126,12 @@
 
 - (BOOL) validateMenuItem:(NSMenuItem *)menuItem
 {
-	if ([menuItem action] == NSSelectorFromString(@"undo:"))
+	if ([menuItem action] == NSSelectorFromString(@"undo:") ||
+		[menuItem action] == NSSelectorFromString(@"redo:") )
 	{
 		return NO;
 	}
-	else
-	{
-		return [super validateMenuItem:menuItem];
-	}
+	return YES;
 }
 
 
