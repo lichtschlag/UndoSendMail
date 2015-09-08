@@ -131,6 +131,7 @@
 				3F83B4E8178C7A3A00006D85 /* Sources */,
 				3F83B4E9178C7A3A00006D85 /* Frameworks */,
 				3F83B4EA178C7A3A00006D85 /* Resources */,
+				3F35BC6E1B9F209700B7F4A1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -178,6 +179,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F35BC6E1B9F209700B7F4A1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "setfile -a B $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.mailbundle\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F83B4E8178C7A3A00006D85 /* Sources */ = {
