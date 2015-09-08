@@ -1,6 +1,6 @@
 #UndoSendMail
 
-![UndoSendMail In Action](http://bit.ly/1VLhBHK)
+![UndoSendMail In Action](https://dl.dropboxusercontent.com/u/583525/GitHub/UndoSendMailForGithub.gif)
 
 Here's a little plugin to Mail.app which I wrote because I missed Gmail's functionality to delay the sending of Emails for a short time.
 This plug-in will do exactly that.
