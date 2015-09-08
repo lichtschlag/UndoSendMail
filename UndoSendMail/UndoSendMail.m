@@ -35,6 +35,7 @@
 //		[UndoSendMail registerBundle];
 		
 		[USMMailDocumentEditorTweaks installSendListener];
+		[USMMailDocumentEditorTweaks installMenuValidation];
 		NSLog(@"UndoSendMail has successfully loaded.");
 	}
 	else

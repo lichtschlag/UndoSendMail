@@ -13,16 +13,26 @@
 
 #import <objc/objc-runtime.h>
 #import "USMShieldView.h"
-// #import "MailHeaders.h"
 
 
 const NSString *const kUndoSendEmailStorageKey			= @"UndoSendEmailStorage";
 
 const NSString *const kOverlayViewKey					= @"overlayView";
+const NSString *const kBaseMenuTitleKey					= @"baseMenuTitle";
 const NSString *const kEmailSendCommandIsQueuedKey		= @"emailSendCommandIsQueued";
 const NSString *const kTimerKey							= @"timer";
 
 const NSTimeInterval kSendDelay = 15.0f;
+
+
+// =================================================================================================================
+@interface DummyDocumentEditor : NSObject
+// =================================================================================================================
+
+- (BOOL) validateMenuItemHookedByUndoSendMail:(NSMenuItem*) menuItem;
+- (BOOL) sendHookedByUndoSendMail:(id) sender;
+
+@end
 
 
 // =================================================================================================================
@@ -43,7 +53,7 @@ const NSTimeInterval kSendDelay = 15.0f;
 void timerFired(id selfPointer, SEL _cmd, NSTimer *theTimer)
 {
 	// remember: ourSend: will be send: after the swizzle
-	[selfPointer performSelector:@selector(sendHookedByUndoSendMail:) withObject:selfPointer];
+	[(DummyDocumentEditor *)selfPointer sendHookedByUndoSendMail:selfPointer];
 	
 	// check if minimized, if so, close the window
 	NSWindow *messageWindow = [selfPointer performSelector:@selector(window) withObject:nil];
@@ -57,47 +67,44 @@ void timerFired(id selfPointer, SEL _cmd, NSTimer *theTimer)
 
 BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 {
-	// step 1
-	// get state of the current message and set one if this is the first time we get to act on it
-	NSMutableDictionary *ourData;
-	ourData = objc_getAssociatedObject(selfPointer, (__bridge const void *)(kUndoSendEmailStorageKey));
-	
-	if (!ourData)
-	{
-		ourData = [@{kEmailSendCommandIsQueuedKey:@NO,
-					 kOverlayViewKey:[NSNull null],
-					 kTimerKey:[NSNull null]}
-				   mutableCopy];
-	}
-	
-	
-	// step 2
-	// update display and internal state
 	NSWindow *currentWindow = [selfPointer performSelector:@selector(window) withObject:nil];
 	NSView *backingView = [currentWindow contentView];
 	NSToolbar *windowToolbar = [currentWindow toolbar];
 	
+	// menu item
+	NSMenuItem *messageMenu = [[currentWindow menu] itemAtIndex:5];
+	NSMenuItem *sendMenuItem = [[messageMenu submenu] itemAtIndex:0];
+
 	// find the toolbar send: item
 	NSToolbarItemGroup *sendItemGroup = [[windowToolbar items] objectAtIndex:0];
-
+	
 	//	TODO: make sure we work with different icon orders or no send toolbar item at all
-	
 	NSToolbarItem *sendItem = [[sendItemGroup subitems] objectAtIndex:0];
-	
+
+	// step 1
+	// get state of the current message and set one if this is the first time we get to act on it
+	NSMutableDictionary *ourData;
+	ourData = objc_getAssociatedObject(selfPointer, (__bridge const void *)(kUndoSendEmailStorageKey));
+	if (!ourData)
+	{
+		ourData = [@{kEmailSendCommandIsQueuedKey:@NO,
+					 kOverlayViewKey:[NSNull null],
+					 kTimerKey:[NSNull null],
+					 kBaseMenuTitleKey:sendMenuItem.title}
+				   mutableCopy];
+	}
+
+	// step 2
+	// update display and internal state
 	if (![ourData[kEmailSendCommandIsQueuedKey] boolValue])
 	{
 		// view
 		NSView *overlayView = [[USMShieldView alloc] initWithFrame:backingView.bounds];
-//		overlayView.wantsLayer = YES;
-//		overlayView.layer.backgroundColor = CGColorCreateGenericGray(0.5, 0.5);
-//		[overlayView setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable ];
 		[backingView addSubview:overlayView];
 		[currentWindow makeFirstResponder:overlayView];
 		ourData[kOverlayViewKey] = overlayView;
 		
 		// button state
-//		NSURL *imageURL = [[NSBundle bundleForClass:[USMShieldView class]] URLForImageResource:@"TB_Send_Fullscreen copy"];
-//		NSImage *buttonImage = [[NSImage alloc] initByReferencingURL:imageURL];
 		NSImage *buttonImage = [NSImage imageNamed:@"NSStopProgressTemplate"];
 		
 		[sendItem setToolTip:@"Undo Send"];
@@ -115,7 +122,7 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 		ourData[kEmailSendCommandIsQueuedKey] = @YES;
 		
 		// order window out
-		//		[NSApp bringMailMainWindowForward];
+		// [NSApp bringMailMainWindowForward];
 	}
 	else
 	{
@@ -136,11 +143,33 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 		
 		// bool
 		ourData[kEmailSendCommandIsQueuedKey] = @NO;
+		
+		// menu
+		[sendMenuItem setTitle:ourData[kBaseMenuTitleKey]];
 	}
 	
 	objc_setAssociatedObject(selfPointer, (__bridge const void *)(kUndoSendEmailStorageKey), ourData, OBJC_ASSOCIATION_RETAIN);
 	
 	return YES;
+}
+
+
+BOOL validateMenuItemHookedByUndoSendMail(id selfPointer, SEL _cmd, NSMenuItem* menuItem)
+{
+	// are we on?
+	NSMutableDictionary *ourData = objc_getAssociatedObject(selfPointer, (__bridge const void *)(kUndoSendEmailStorageKey));
+	BOOL shouldChangeMenuItem = (ourData && [ourData[kEmailSendCommandIsQueuedKey] boolValue] );
+	
+	// our behaviour
+	if (shouldChangeMenuItem &&
+		[menuItem action] == NSSelectorFromString(@"send:"))
+	{
+		[menuItem setTitle:[NSString stringWithFormat:@"Undo %@", ourData[kBaseMenuTitleKey]]];
+		return YES;
+	}
+	
+	// default behaviour
+	return [(DummyDocumentEditor *)selfPointer validateMenuItemHookedByUndoSendMail:menuItem];
 }
 
 
@@ -176,6 +205,30 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 }
 
 
++ (void) installMenuValidation
+{
+	Class MDEClass = NSClassFromString(@"MailDocumentEditor");
+	if (!MDEClass)
+		MDEClass = NSClassFromString(@"DocumentEditor");
+	if (USMAssert((BOOL)MDEClass, @"Could not hook UndoSendMail: DocumentEditor class missing"))
+	{
+		// step 1 install our validateMenuItem: message on the MailDocumentEditor
+		class_addMethod(MDEClass, @selector(validateMenuItemHookedByUndoSendMail:), (IMP) validateMenuItemHookedByUndoSendMail, "v@:@");
+		
+		// step 2 swap the two validateMenuItem: message implementations
+		Method validateMethodFromMail = class_getInstanceMethod(MDEClass, @selector(validateMenuItem:));
+		
+		if (USMAssert((validateMethodFromMail != NULL), @"Unable to find - (void) validateMenuItem: original method"))
+		{
+			Method validateMethodFromUndoSendMail = class_getInstanceMethod(MDEClass, @selector(validateMenuItemHookedByUndoSendMail:));
+			USMAssert((validateMethodFromUndoSendMail != NULL), @"Unable to find - (void) validateMenuItem: replacement method");
+			
+			USMExchangeMethodImplementations(validateMethodFromMail, validateMethodFromUndoSendMail);
+		}
+	}
+}
+
+
 // ---------------------------------------------------------------------------------------------------------------
 #pragma mark -
 #pragma mark Placeholder Methods
@@ -197,6 +250,18 @@ BOOL sendHookedByUndoSendMail(id selfPointer, SEL _cmd, id sender)
 - (void) send:(id)sender
 {
 	USMAssert(NO, @"A Placeholder method was called, this shouldnever happen");
+}
+
+- (BOOL) validateMenuItem:(NSMenuItem *)menuItem
+{
+	USMAssert(NO, @"A Placeholder method was called, this shouldnever happen");
+	return YES;
+}
+
+- (BOOL) validateMenuItemHookedByUndoSendMail:(NSMenuItem *)menuItem
+{
+	USMAssert(NO, @"A Placeholder method was called, this shouldnever happen");
+	return YES;
 }
 
 
