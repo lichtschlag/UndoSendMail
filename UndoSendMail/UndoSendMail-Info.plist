@@ -21,13 +21,14 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2013 Leonhard Lichtschlag. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>UndoSendMail</string>
 	<key>SupportedPluginCompatibilityUUIDs</key>
 	<array>
+		<string>AB695A2B-4605-4A74-A99F-AF9F9C92C41B</string>
 		<string>60D52D22-7491-4CA7-95BA-88215BD88F8E</string>
 		<string>F4C26776-22B3-4A0A-96E1-EA8E4482E0B5</string>
 		<string>2183B2CD-BEDF-4AA6-AC18-A1BBED2E3354</string>
