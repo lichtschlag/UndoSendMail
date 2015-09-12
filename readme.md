@@ -20,6 +20,7 @@ That said, I'll be happy to hear about suggestions and pull requests.
 ##Installation:
 1. Complile with Xcode
 2. Copy product to ~/Library/Mail/Bundles/
+3. Run `defaults write com.apple.mail     EnableBundles  1`
 
 *If you do not know what this means, then this plug-in is not for you.*
 
