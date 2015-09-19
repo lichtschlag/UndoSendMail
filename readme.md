@@ -1,4 +1,4 @@
-#UndoSendMail
+#Undo Send Mail for Apple Mail
 
 ![UndoSendMail In Action](https://dl.dropboxusercontent.com/u/583525/GitHub/UndoSendMailForGithub.gif)
 
