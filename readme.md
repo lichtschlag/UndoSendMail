@@ -1,5 +1,7 @@
 #UndoSendMail
 
+![UndoSendMail In Action](https://dl.dropboxusercontent.com/u/583525/GitHub/UndoSendMailForGithub.gif)
+
 Here's a little plugin to Mail.app which I wrote because I missed Gmail's functionality to delay the sending of Emails for a short time.
 This plug-in will do exactly that.
 So: write a mail, hit send, and you'll have some time to review your text before it is sent for good. 
@@ -15,20 +17,19 @@ That said, I'll be happy to hear about suggestions and pull requests.
 — Leonhard Lichtschlag <br />leonhard@lichtschlag.net
 
 
-##Compiling:
-Built with Xcode 5 prerelease version, it will need minor tweaks with the build settings to compile on earlier versions.
-
-
 ##Installation:
-1. Build
-2. Copy to ~/Library/Mail/Bundles/
+1. Complile with Xcode
+2. Copy product to ~/Library/Mail/Bundles/
+3. Run `defaults write com.apple.mail     EnableBundles  1`
 
+*If you do not know what this means, then this plug-in is not for you.*
 
 ##Uninstallation:
 1. Delete ~/Library/Mail/Bundles/UndoSendMail.mailbundle
 
 
 ##Debugging:
-UndoSendMail will complain on the console if something is not working as expected. 
-Also, Mail.app will quarantine UndoSendMail should it crash.
-The Info.plist needs a key to whitelist each Mail.app release it is compatible with, so with each update to Mail.app this needs to be updated as well...
+Of course, future releases of Mail.app can break the plug-in functionality.
+Mail.app loads only plug-ins that advertise to be compatible with the respective version of Mail. If Mail gets updated (e.g. a point release on Mac OS) all plug-ins (including UndoSendMail) need to whitelist the release in the Info.plist.
+Should UndoSendMail encounter problems that it cannot deal with, it will complain on the console.
+Should UndoSendMail crash Mail, Mail.app will quarantine the bundle from the plug-in folder.
