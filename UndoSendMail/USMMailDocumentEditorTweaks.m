@@ -183,6 +183,8 @@ BOOL validateMenuItemHookedByUndoSendMail(id selfPointer, SEL _cmd, NSMenuItem* 
 	Class MDEClass = NSClassFromString(@"MailDocumentEditor");
 	if (!MDEClass)
 		MDEClass = NSClassFromString(@"DocumentEditor");
+    if (!MDEClass)
+        MDEClass = NSClassFromString(@"ComposeViewController");
 	if (USMAssert((BOOL)MDEClass, @"Could not hook UndoSendMail: DocumentEditor class missing"))
 	{
 		// step 1 install ourSend: message on the MailDocumentEditor
@@ -210,6 +212,8 @@ BOOL validateMenuItemHookedByUndoSendMail(id selfPointer, SEL _cmd, NSMenuItem* 
 	Class MDEClass = NSClassFromString(@"MailDocumentEditor");
 	if (!MDEClass)
 		MDEClass = NSClassFromString(@"DocumentEditor");
+    if (!MDEClass)
+        MDEClass = NSClassFromString(@"ComposeViewController");
 	if (USMAssert((BOOL)MDEClass, @"Could not hook UndoSendMail: DocumentEditor class missing"))
 	{
 		// step 1 install our validateMenuItem: message on the MailDocumentEditor

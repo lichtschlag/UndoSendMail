@@ -25,11 +25,13 @@
 + (void) initialize
 {
 	[super initialize];
-    
-	Class DocumentEditorClass = NSClassFromString(@"MailDocumentEditor");
-	if (!DocumentEditorClass)
-		DocumentEditorClass = NSClassFromString(@"DocumentEditor");
-	if (USMAssert((BOOL)DocumentEditorClass, @"Unable to find a DocumentEditor class"))
+	
+    Class DocumentEditorClass = NSClassFromString(@"MailDocumentEditor");
+    if (!DocumentEditorClass)
+        DocumentEditorClass = NSClassFromString(@"DocumentEditor");             // Sometime during Mavericks Betas
+    if (!DocumentEditorClass)
+        DocumentEditorClass = NSClassFromString(@"ComposeViewController");      // El Capitan
+	if (USMAssert((BOOL)DocumentEditorClass, @"Unable to find a Mail Compose Controller class"))
 	{
 		// TODO: what does this do?
 //		[UndoSendMail registerBundle];
