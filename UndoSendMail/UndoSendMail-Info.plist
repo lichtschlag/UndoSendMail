@@ -26,6 +26,15 @@
 	<string>Copyright © 2013 Leonhard Lichtschlag. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>UndoSendMail</string>
+	<key>Supported10.12PluginCompatibilityUUIDs</key>
+	<array>
+		<string>#For Mail 10.0b3200 on 10.12 build 16A239j</string>
+		<string>36CCB8BB-2207-455E-89BC-B9D6E47ABB5B</string>
+		<string>#For Mail 10.1b3243 on 10.12.1 build 16B2327e</string>
+		<string>9054AFD9-2607-489E-8E63-8B09A749BC61</string>
+		<string>#For Mail 10.2b3253 on 10.12.2 build 16C32e</string>
+		<string>1CD3B36A-0E3B-4A26-8F7E-5BDF96AAC97E</string>
+	</array>
 	<key>SupportedPluginCompatibilityUUIDs</key>
 	<array>
 		<string>71562B89-0D90-4588-8E94-A75B701D6443</string>
@@ -69,10 +78,6 @@
 		<string>D1EFE124-86FF-4751-BF00-80B2C0D6F2E4</string>
 		<string>800E5C92-87D3-429B-8740-5C6183CD13EA</string>
 		<string>7C051997-F45A-4523-B053-2D262F94C775</string>
-	</array>
-    <key>Supported10.12PluginCompatibilityUUIDs</key>
-    <array> 
-        <string>36CCB8BB-2207-455E-89BC-B9D6E47ABB5B</string>
 	</array>
 </dict>
 </plist>

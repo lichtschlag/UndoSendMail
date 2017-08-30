@@ -41,7 +41,7 @@
 		NSLog(@"UndoSendMail has successfully loaded.");
 	}
 	else
-		NSLog(@"Fail to load UndoSendMail, plug-in remains inactive until next Mail.app launch");
+		NSLog(@"Failed to load UndoSendMail, plug-in remains inactive until next Mail.app launch");
 	
 	// for DEBUG
 //	double delayInSeconds = 1.0;

@@ -243,28 +243,28 @@ BOOL validateMenuItemHookedByUndoSendMail(id selfPointer, SEL _cmd, NSMenuItem* 
 
 - (void) timerFired:(NSTimer *)timer
 {
-	USMAssert(NO, @"A Placeholder method was called, this shouldnever happen");
+	USMAssert(NO, @"A Placeholder method was called, this should never happen");
 }
 
 - (void) sendHookedByUndoSendMail:(id)sender
 {
-	USMAssert(NO, @"A Placeholder method was called, this shouldnever happen");
+	USMAssert(NO, @"A Placeholder method was called, this should never happen");
 }
 
 - (void) send:(id)sender
 {
-	USMAssert(NO, @"A Placeholder method was called, this shouldnever happen");
+	USMAssert(NO, @"A Placeholder method was called, this should never happen");
 }
 
 - (BOOL) validateMenuItem:(NSMenuItem *)menuItem
 {
-	USMAssert(NO, @"A Placeholder method was called, this shouldnever happen");
+	USMAssert(NO, @"A Placeholder method was called, this should never happen");
 	return YES;
 }
 
 - (BOOL) validateMenuItemHookedByUndoSendMail:(NSMenuItem *)menuItem
 {
-	USMAssert(NO, @"A Placeholder method was called, this shouldnever happen");
+	USMAssert(NO, @"A Placeholder method was called, this should never happen");
 	return YES;
 }
 
